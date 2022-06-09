@@ -6,7 +6,10 @@ package Controlador;
 
 import java.util.List;
 import Modelo.Matricula;
+import Servicio.AutoServicio;
 import Servicio.MatriculaServicio;
+import Servicio.PropietarioServicio;
+import java.time.LocalDate;
 
 /**
  *
@@ -14,9 +17,14 @@ import Servicio.MatriculaServicio;
  */
 public class MatriculaControl {
     private final MatriculaServicio matriculaServicio = new MatriculaServicio();
+    private final AutoServicio autoServicio= new AutoServicio();
+    private final PropietarioServicio propietarioServicio= new PropietarioServicio();
     
     public Matricula crear(String [] params){
-        var matricula = new Matricula(Integer.valueOf(params[0]),params[1]);
+        var auto= this.autoServicio.buscarporPlaca(params[4]);
+        var propietario= this.propietarioServicio.buscarporId(Integer.valueOf(params[5]));
+        var matricula = new Matricula(Integer.valueOf(params[0]),LocalDate.parse(params[1]),Integer.valueOf(params[2]),Integer.valueOf(params[3]),propietario,auto);
+        
         this.matriculaServicio.crear(matricula);
         return matricula;                                                    
     }

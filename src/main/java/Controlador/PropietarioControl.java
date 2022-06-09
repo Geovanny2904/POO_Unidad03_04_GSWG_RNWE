@@ -7,6 +7,7 @@ package Controlador;
 import java.util.List;
 import Modelo.Propietario;
 import Servicio.PropietarioServicio;
+import java.time.LocalDate;
 
 /**
  *
@@ -16,7 +17,7 @@ public class PropietarioControl {
     private final PropietarioServicio propietarioServicio = new PropietarioServicio();
     
     public Propietario crear(String [] params){
-        var propietario = new Propietario(Integer.valueOf(params[0]),params[1]);
+        var propietario = new Propietario(Integer.valueOf(params[0]),params[1],LocalDate.parse(params[2]),Integer.valueOf(params[3]),params[4]);
         this.propietarioServicio.crear(propietario);
         return propietario;                                                    
     }

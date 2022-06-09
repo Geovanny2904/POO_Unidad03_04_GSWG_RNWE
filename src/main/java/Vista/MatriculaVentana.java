@@ -170,12 +170,14 @@ public class MatriculaVentana extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String [] params = new String[4];
+        String [] params = new String[6];
         params[0]=this.jTextField1.getText();
         params[1]=this.jTextField2.getText();
         params[2]=this.jTextField3.getText();
         params[3]=this.jTextField4.getText();
+        
         this.matriculaControl.crear(params);
+        System.out.println("INFORMACIÓN GUARDADA CORRECTAMENTE");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

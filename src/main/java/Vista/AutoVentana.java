@@ -191,14 +191,15 @@ public class AutoVentana extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+      
         String [] params = new String[5];
         params[0]=this.jTextField1.getText();
-        params[1]=this.jTextField3.getText();
-        params[2]=this.jComboBox1.getSelectedItem().toString();
+        params[2]=this.jTextField3.getText();
+        params[1]=this.jComboBox1.getSelectedItem().toString();
         params[3]=this.jTextField4.getText();
         params[4]=this.jTextField5.getText();
         this.autoControl.crear(params);
+        System.out.println("INFORMACIÓN GUARDADA CORRECTAMENTE");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed

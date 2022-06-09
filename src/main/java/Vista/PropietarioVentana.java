@@ -6,6 +6,7 @@ package Vista;
 
 import Controlador.MatriculaControl;
 import Controlador.PropietarioControl;
+import Modelo.Propietario;
 public class PropietarioVentana extends javax.swing.JFrame {
 
     /**
@@ -206,13 +207,17 @@ public class PropietarioVentana extends javax.swing.JFrame {
         params[1]=this.jTextField2.getText();
         params[2]=this.jTextField3.getText();
         params[3]=this.jTextField4.getText();
-        params[4]=this.jTextField4.getText();
+        params[4]=this.jComboBox1.getSelectedItem().toString();
         this.propietarioControl.crear(params);
+        System.out.println("INFORMACIÓN GUARDADA CORRECTAMENTE");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         System.out.println(this.propietarioControl.listar().toString());
+//        for (Propietario propietario : this.propietarioControl.listar()) {
+//            System.out.println(propietario.toString());
+//        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

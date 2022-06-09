@@ -16,10 +16,18 @@ public class Propietario {
     LocalDate fechaNacPropietario;
     int numeroVehiculosPropietario;
     String tipoLicenciaPropietario;
-
-    public Propietario(Integer valueOf, String param) {
+    
+     public Propietario(Integer valueOf, String param) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    public Propietario(int idPropietario, String nombrePropietario, LocalDate fechaNacPropietario, int numeroVehiculosPropietario, String tipoLicenciaPropietario) {
+        this.idPropietario = idPropietario;
+        this.nombrePropietario = nombrePropietario;
+        this.fechaNacPropietario = fechaNacPropietario;
+        this.numeroVehiculosPropietario = numeroVehiculosPropietario;
+        this.tipoLicenciaPropietario = tipoLicenciaPropietario;
+    }
+    
     
     public boolean idValida(){
         var retorno= false;
@@ -31,4 +39,50 @@ public class Propietario {
         
         return retorno;
     }
+
+    public int getIdPropietario() {
+        return idPropietario;
+    }
+
+    public void setIdPropietario(int idPropietario) {
+        this.idPropietario = idPropietario;
+    }
+
+    public String getNombrePropietario() {
+        return nombrePropietario;
+    }
+
+    public void setNombrePropietario(String nombrePropietario) {
+        this.nombrePropietario = nombrePropietario;
+    }
+
+    public LocalDate getFechaNacPropietario() {
+        return fechaNacPropietario;
+    }
+
+    public void setFechaNacPropietario(LocalDate fechaNacPropietario) {
+        this.fechaNacPropietario = fechaNacPropietario;
+    }
+
+    public int getNumeroVehiculosPropietario() {
+        return numeroVehiculosPropietario;
+    }
+
+    public void setNumeroVehiculosPropietario(int numeroVehiculosPropietario) {
+        this.numeroVehiculosPropietario = numeroVehiculosPropietario;
+    }
+
+    public String getTipoLicenciaPropietario() {
+        return tipoLicenciaPropietario;
+    }
+
+    public void setTipoLicenciaPropietario(String tipoLicenciaPropietario) {
+        this.tipoLicenciaPropietario = tipoLicenciaPropietario;
+    }
+
+    @Override
+    public String toString() {
+        return "Propietario{" + "idPropietario=" + idPropietario + ", nombrePropietario=" + nombrePropietario + ", fechaNacPropietario=" + fechaNacPropietario + ", numeroVehiculosPropietario=" + numeroVehiculosPropietario + ", tipoLicenciaPropietario=" + tipoLicenciaPropietario + '}';
+    }
+    
 }

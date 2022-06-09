@@ -20,4 +20,12 @@ public class AutoServicio implements IAutoServicio {
     public List<Auto> listar() {
         return this.autoList;
     }
+    @Override
+    public Auto buscarporPlaca(String placa){
+        for (var auto:this.autoList) {
+            if(auto.getPlaca().equals(placa))
+                return auto; 
+        }
+        throw new RuntimeException("No encontrado");
+    }
 }

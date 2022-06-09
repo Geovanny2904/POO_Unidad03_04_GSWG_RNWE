@@ -18,6 +18,14 @@ public class Auto {
     public Auto(Integer valueOf, String param) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    public Auto(String placa, String marca, int precio, int kilometraje, String modelo) {
+        this.placa = placa;
+        this.marca = marca;
+        this.precio = precio;
+        this.kilometraje = kilometraje;
+        this.modelo = modelo;
+    }
     
     public boolean validarPlaca(){
         var retorno=false;
@@ -29,4 +37,50 @@ public class Auto {
         
         return retorno;
     }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public int getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(int kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Auto{" + "placa=" + placa + ", marca=" + marca + ", precio=" + precio + ", kilometraje=" + kilometraje + ", modelo=" + modelo + '}';
+    }
+    
 }
