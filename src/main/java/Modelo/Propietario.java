@@ -16,6 +16,10 @@ public class Propietario {
     LocalDate fechaNacPropietario;
     int numeroVehiculosPropietario;
     String tipoLicenciaPropietario;
+
+    public Propietario(Integer valueOf, String param) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public boolean idValida(){
         var retorno= false;

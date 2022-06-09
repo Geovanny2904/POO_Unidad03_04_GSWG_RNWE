@@ -15,6 +15,10 @@ public class Matricula {
     int duracionMatricula;
     Propietario propietario;
     Auto auto;
+
+    public Matricula(Integer valueOf, String param) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public int calcularExpiracion(){
         var retorno=1000;
