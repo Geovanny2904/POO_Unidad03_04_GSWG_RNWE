@@ -23,8 +23,9 @@ public class MatriculaControl {
     public Matricula crear(String [] params){
         var auto= this.autoServicio.buscarporPlaca(params[4]);
         var propietario= this.propietarioServicio.buscarporId(Integer.valueOf(params[5]));
-        var matricula = new Matricula(Integer.valueOf(params[0]),LocalDate.parse(params[1]),Integer.valueOf(params[2]),Integer.valueOf(params[3]),propietario,auto);
-        
+        var matricula = new Matricula(Integer.valueOf(params[0]),
+                LocalDate.parse(params[1]),Integer.valueOf(params[2]),
+                Integer.valueOf(params[3]));
         this.matriculaServicio.crear(matricula);
         return matricula;                                                    
     }

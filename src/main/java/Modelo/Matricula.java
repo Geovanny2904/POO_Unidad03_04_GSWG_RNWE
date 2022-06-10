@@ -17,10 +17,6 @@ public class Matricula {
     int duracionMatricula;
     Propietario propietario;
     Auto auto;
-    
-     public Matricula(Integer valueOf, String param) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     public Matricula(int numero, LocalDate fechaMatricula, int numeroChasis, int duracionMatricula, Propietario propietario, Auto auto) {
         this.numero = numero;
@@ -29,6 +25,18 @@ public class Matricula {
         this.duracionMatricula = duracionMatricula;
         this.propietario = propietario;
         this.auto = auto;
+    }
+
+    public Matricula(int numero, LocalDate fechaMatricula, int numeroChasis, 
+            int duracionMatricula) {
+        this.numero = numero;
+        this.fechaMatricula = fechaMatricula;
+        this.numeroChasis = numeroChasis;
+        this.duracionMatricula = duracionMatricula;
+    }
+
+    public Matricula(int numero, String ningún_Resultado) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public int getNumero() {
@@ -93,7 +101,10 @@ public class Matricula {
 
     @Override
     public String toString() {
-        return "Matricula{" + "numero=" + numero + ", fechaMatricula=" + fechaMatricula + ", numeroChasis=" + numeroChasis + ", duracionMatricula=" + duracionMatricula + ", propietario=" + propietario + ", auto=" + auto + '}';
+        return "Matricula{" + "numero=" + numero + ", fechaMatricula=" + 
+                fechaMatricula + ", numeroChasis=" + numeroChasis + 
+                ", duracionMatricula=" + duracionMatricula + ", propietario=" +
+                propietario + ", auto=" + auto + '}';
     }
     
 }

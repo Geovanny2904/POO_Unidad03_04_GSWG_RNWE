@@ -80,7 +80,9 @@ public class Auto {
 
     @Override
     public String toString() {
-        return "Auto{" + "placa=" + placa + ", marca=" + marca + ", precio=" + precio + ", kilometraje=" + kilometraje + ", modelo=" + modelo + '}';
+        return "Auto{" + "placa=" + placa + ", marca=" + marca + 
+                ", precio=" + precio + ", kilometraje=" + kilometraje + 
+                ", modelo=" + modelo + '}';
     }
     
 }

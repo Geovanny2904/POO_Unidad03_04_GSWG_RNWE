@@ -17,10 +17,9 @@ public class Propietario {
     int numeroVehiculosPropietario;
     String tipoLicenciaPropietario;
     
-     public Propietario(Integer valueOf, String param) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    public Propietario(int idPropietario, String nombrePropietario, LocalDate fechaNacPropietario, int numeroVehiculosPropietario, String tipoLicenciaPropietario) {
+    public Propietario(int idPropietario, String nombrePropietario, 
+            LocalDate fechaNacPropietario, int numeroVehiculosPropietario, 
+            String tipoLicenciaPropietario) {
         this.idPropietario = idPropietario;
         this.nombrePropietario = nombrePropietario;
         this.fechaNacPropietario = fechaNacPropietario;
@@ -82,7 +81,11 @@ public class Propietario {
 
     @Override
     public String toString() {
-        return "Propietario{" + "idPropietario=" + idPropietario + ", nombrePropietario=" + nombrePropietario + ", fechaNacPropietario=" + fechaNacPropietario + ", numeroVehiculosPropietario=" + numeroVehiculosPropietario + ", tipoLicenciaPropietario=" + tipoLicenciaPropietario + '}';
+        return "Propietario{" + "idPropietario=" + idPropietario + 
+                ", nombrePropietario=" + nombrePropietario + 
+                ", fechaNacPropietario=" + fechaNacPropietario + 
+                ", numeroVehiculosPropietario=" + numeroVehiculosPropietario + 
+                ", tipoLicenciaPropietario=" + tipoLicenciaPropietario + '}';
     }
     
 }

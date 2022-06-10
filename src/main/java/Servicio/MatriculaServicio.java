@@ -21,5 +21,16 @@ public class MatriculaServicio implements IMatriculaServicio {
     public List<Matricula> listar() {
         return this.matriculaList;
     }
+    @Override
+    public Matricula buscarPorNumero(int numero) {
+        var matricula = new Matricula(numero,"Ningún Resultado");
+        for(Matricula mat:this.matriculaList){
+            if(mat.getNumero()==numero){
+                matricula=mat;
+                break;
+            }
+        }
+        return matricula;
+    }
 
 }

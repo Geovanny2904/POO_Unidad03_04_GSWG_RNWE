@@ -21,7 +21,7 @@ public class PropietarioServicio implements IPropietarioServicio {
     @Override
     public List<Propietario> listar() {
         return this.propietarioList;
-    }
+    } 
 
     @Override
     public Propietario buscarporId(int idPropietario) {
@@ -32,5 +32,11 @@ public class PropietarioServicio implements IPropietarioServicio {
 
         }
         throw new RuntimeException("NO SE HA ENCONTRADO");
+    }
+    @Override
+    public Propietario eliminar(int idPropietario) {
+        var propietario = this.buscarporId(idPropietario);
+        this.propietarioList.remove(propietario);
+        return propietario;
     }
 }

@@ -17,7 +17,8 @@ public class PropietarioControl {
     private final PropietarioServicio propietarioServicio = new PropietarioServicio();
     
     public Propietario crear(String [] params){
-        var propietario = new Propietario(Integer.valueOf(params[0]),params[1],LocalDate.parse(params[2]),Integer.valueOf(params[3]),params[4]);
+        var propietario = new Propietario(Integer.valueOf(params[0]),params[1],
+                LocalDate.parse(params[2]),Integer.valueOf(params[3]),params[4]);
         this.propietarioServicio.crear(propietario);
         return propietario;                                                    
     }

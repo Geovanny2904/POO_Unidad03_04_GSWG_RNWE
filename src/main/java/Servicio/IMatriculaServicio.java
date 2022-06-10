@@ -14,4 +14,5 @@ import Modelo.Matricula;
 interface IMatriculaServicio {
     public Matricula crear(Matricula matricula);
     public List<Matricula> listar();
+    public Matricula buscarPorNumero(int numero);
 }

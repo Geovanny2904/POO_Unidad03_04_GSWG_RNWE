@@ -15,4 +15,5 @@ interface IPropietarioServicio {
     public Propietario crear(Propietario propietario);
     public List<Propietario> listar();
     public Propietario buscarporId(int idPropietario);
+    public Propietario eliminar(int idPropietario);
 }

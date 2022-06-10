@@ -48,7 +48,7 @@ public class PropietarioVentana extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre");
 
-        jLabel3.setText("Fecha de Nacimiento");
+        jLabel3.setText("Fecha de Nacimiento(aaaa-mm-dd)");
 
         jLabel4.setText("Vehiculos");
 
