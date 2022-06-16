@@ -262,8 +262,8 @@ public class CreateMatricula extends javax.swing.JFrame {
             datos[i][1]=matricula.getFechaMatricula();
             datos[i][2]=matricula.getNumeroChasis();
             datos[i][3]=matricula.getDuracionMatricula();
-            datos[i][4]=matricula.getAuto().getModelo();
-            datos[i][5]=matricula.getPropietario().getNombrePropietario();
+            datos[i][4]=matricula.getAuto().getPlaca();
+            datos[i][5]=matricula.getPropietario().getIdPropietario();
             i++;
         }
         this.modeloTabla = new DefaultTableModel(datos,encabezado);

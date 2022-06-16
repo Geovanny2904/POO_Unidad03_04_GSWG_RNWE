@@ -270,7 +270,7 @@ public class DeleteMatricula extends javax.swing.JFrame {
         // TODO add your handling code here:
         String arg= this.jTextField1.getText();
         Matricula matricula = this.matriculaControl.buscarMatricula(arg);
-        this.jTextField2.setText(String(matricula.getFechaMatricula()));
+        this.jTextField2.setText(matricula.getFechaMatricula());
         this.jTextField3.setText(String.valueOf(matricula.getNumeroChasis()));
         this.jTextField4.setText(String.valueOf(matricula.getDuracionMatricula()));
         this.jTextField5.setText(String.valueOf(matricula.getAuto().getPlaca()));
