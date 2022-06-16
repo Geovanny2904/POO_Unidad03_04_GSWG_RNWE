@@ -226,7 +226,7 @@ public class DeletePropietario extends javax.swing.JFrame {
         String arg= this.jTextField1.getText();
         Propietario propietario = this.propietarioControl.buscarPropietario(arg);
         this.jTextField2.setText(propietario.getNombrePropietario());
-        this.jTextField3.setText(Date(propietario.getFechaNacPropietario());
+        this.jTextField3.setText(propietario.getFechaNacPropietario());
         this.jTextField4.setText(String.valueOf(propietario.getNumeroVehiculosPropietario()));
         this.jComboBox1.setText(propietario.getTipoLicenciaPropietario());
     }//GEN-LAST:event_jTextField1ActionPerformed

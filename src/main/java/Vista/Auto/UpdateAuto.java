@@ -7,6 +7,7 @@ package Vista.Auto;
 import Vista.*;
 import Controlador.AutoControl;
 import Modelo.Auto;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -242,19 +243,29 @@ public class UpdateAuto extends javax.swing.JFrame {
             datos[i][3]=auto.getKilometraje();
             datos[i][4]=auto.getModelo();
             i++;
+            
         }
         this.modeloTabla = new DefaultTableModel(datos,encabezado);
-        this.jTable1.setModel(modeloTabla);
-        
+        this.jTable1.setModel(modeloTabla);  
     }
+        public void iniciarCombo(){
+           this.jComboBox1 = new JComboBox();
+        }
+        public void actualizarCombo(){
+        this.jComboBox1.removeAllItems();
+        for(var marca:this.autoControl.listar())
+           this.jComboBox1.addItem(Marca);
+        }
+        
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
         String [] params = new String[5];
         params[0]=this.jTextField1.getText();
         params[2]=this.jTextField3.getText();
-        params[1]=this.jComboBox1.getSelectedItem().toString();
         params[3]=this.jTextField4.getText();
         params[4]=this.jTextField5.getText();
+        var marca = (Marca)(this.jComboBox1.getSelectedItem());
+                params[1]=marca.getMarca();
         this.autoControl.crear(params);
         System.out.println("INFORMACIÓN GUARDADA CORRECTAMENTE");
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -270,7 +270,7 @@ public class DeleteAuto extends javax.swing.JFrame {
         // TODO add your handling code here:
         String arg= this.jTextField1.getText();
         Auto auto = this.autoControl.buscarAuto(arg);
-        this.jComboBox1.setSelectedItem(auto.getMarca());
+        this.jComboBox1.setText(auto.getMarca());
         this.jTextField3.setText(String.valueOf(auto.getPrecio()));
         this.jTextField4.setText(String.valueOf(auto.getKilometraje()));
         this.jTextField5.setText(auto.getModelo());
