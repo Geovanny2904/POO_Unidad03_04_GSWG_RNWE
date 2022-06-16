@@ -6,25 +6,22 @@ package Modelo;
 
 import java.time.LocalDate;
 
-/**
- *
- * @author HP
- */
 public class Matricula {
     int numero;
     LocalDate fechaMatricula;
     int numeroChasis;
     int duracionMatricula;
-    Propietario propietario;
     Auto auto;
+    Propietario propietario;
 
-    public Matricula(int numero, LocalDate fechaMatricula, int numeroChasis, int duracionMatricula, Propietario propietario, Auto auto) {
+    public Matricula(int numero, LocalDate fechaMatricula, int numeroChasis, 
+            int duracionMatricula, Auto auto, Propietario propietario) {
         this.numero = numero;
         this.fechaMatricula = fechaMatricula;
         this.numeroChasis = numeroChasis;
         this.duracionMatricula = duracionMatricula;
-        this.propietario = propietario;
         this.auto = auto;
+        this.propietario = propietario;
     }
 
     public Matricula(int numero, LocalDate fechaMatricula, int numeroChasis, 
@@ -33,10 +30,6 @@ public class Matricula {
         this.fechaMatricula = fechaMatricula;
         this.numeroChasis = numeroChasis;
         this.duracionMatricula = duracionMatricula;
-    }
-
-    public Matricula(int numero, String ningún_Resultado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public int getNumero() {
@@ -103,8 +96,10 @@ public class Matricula {
     public String toString() {
         return "Matricula{" + "numero=" + numero + ", fechaMatricula=" + 
                 fechaMatricula + ", numeroChasis=" + numeroChasis + 
-                ", duracionMatricula=" + duracionMatricula + ", propietario=" +
-                propietario + ", auto=" + auto + '}';
+                ", duracionMatricula=" + duracionMatricula + ", auto=" + auto.toString()
+                + ", propietario=" + propietario.toString() + '}';
     }
     
+
+  
 }

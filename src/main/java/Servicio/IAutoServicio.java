@@ -14,5 +14,8 @@ import Modelo.Auto;
 interface IAutoServicio {
     public Auto crear(Auto auto);
     public List<Auto> listar();
-    public Auto buscarporPlaca(String placa);
+    public Auto modificar(String placaAuto, Auto AutoNuevo);
+    public Auto eliminar(String placaAuto);
+    public Auto buscarPorPlaca(String placaAuto);
+    public int buscarPosicion(Auto auto);
 }

@@ -88,4 +88,7 @@ public class Propietario {
                 ", tipoLicenciaPropietario=" + tipoLicenciaPropietario + '}';
     }
     
+
+ 
+    
 }

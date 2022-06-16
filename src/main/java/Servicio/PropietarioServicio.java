@@ -23,20 +23,46 @@ public class PropietarioServicio implements IPropietarioServicio {
         return this.propietarioList;
     } 
 
-    @Override
-    public Propietario buscarporId(int idPropietario) {
-        for (var propietario : this.propietarioList) {
-            if (propietario.getIdPropietario() == idPropietario) {
-                return propietario;
-            }
-
-        }
-        throw new RuntimeException("NO SE HA ENCONTRADO");
+   @Override
+    public Propietario modificar(int idPropietario, Propietario propietarioNuevo) {
+        var posicion=this.buscarPosicion(this.buscarPorId(idPropietario));
+        this.listar().get(posicion).setNombrePropietario(propietarioNuevo.getNombrePropietario());
+        this.listar().get(posicion).setFechaNacPropietario(propietarioNuevo.getFechaNacPropietario());
+        this.listar().get(posicion).setNumeroVehiculosPropietario(propietarioNuevo.getNumeroVehiculosPropietario());
+        this.listar().get(posicion).setTipoLicenciaPropietario(propietarioNuevo.getTipoLicenciaPropietario());
+        return propietarioNuevo;
     }
+
     @Override
     public Propietario eliminar(int idPropietario) {
-        var propietario = this.buscarporId(idPropietario);
-        this.propietarioList.remove(propietario);
+        Propietario propietario=this.buscarPorId(idPropietario);
+        var posicion=this.buscarPosicion(propietario);
+        this.listar().remove(posicion);
         return propietario;
+    }
+
+    @Override
+    public Propietario buscarPorId(int idPropietario) {
+        Propietario propietario=null;
+        for(var i:this.propietarioList){
+            if(idPropietario==i.getIdPropietario()){
+                propietario=i;
+                break;
+            }
+        }
+        return propietario;
+    }
+
+
+    @Override
+    public int buscarPosicion(Propietario propietario) {
+        int posicion=-1;
+        for(var p:this.propietarioList){
+            posicion++;
+            if(p.getIdPropietario()==propietario.getIdPropietario()){
+                break;
+            }
+        }
+        return posicion;
     }
 }

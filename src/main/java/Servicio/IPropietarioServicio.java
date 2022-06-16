@@ -14,6 +14,8 @@ import Modelo.Propietario;
 interface IPropietarioServicio {
     public Propietario crear(Propietario propietario);
     public List<Propietario> listar();
-    public Propietario buscarporId(int idPropietario);
+    public Propietario buscarPorId(int idPropietario);
     public Propietario eliminar(int idPropietario);
+    public Propietario modificar(int idPropietario, Propietario propietarioNuevo);
+    public int buscarPosicion(Propietario propietario);
 }

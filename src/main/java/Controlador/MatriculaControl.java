@@ -4,8 +4,10 @@
  */
 package Controlador;
 
+import Modelo.Auto;
 import java.util.List;
 import Modelo.Matricula;
+import Modelo.Propietario;
 import Servicio.AutoServicio;
 import Servicio.MatriculaServicio;
 import Servicio.PropietarioServicio;
@@ -20,15 +22,34 @@ public class MatriculaControl {
     private final AutoServicio autoServicio= new AutoServicio();
     private final PropietarioServicio propietarioServicio= new PropietarioServicio();
     
-    public Matricula crear(String [] params){
-        var auto= this.autoServicio.buscarporPlaca(params[4]);
-        var propietario= this.propietarioServicio.buscarporId(Integer.valueOf(params[5]));
-        var matricula = new Matricula(Integer.valueOf(params[0]),
-                LocalDate.parse(params[1]),Integer.valueOf(params[2]),
-                Integer.valueOf(params[3]));
+    public Matricula crear(String [] args){
+        Auto auto = this.autoServicio.buscarPorPlaca(args[4]);
+        Propietario propietario = this.propietarioServicio.buscarPorId(Integer.valueOf(args[5]));
+        Matricula matricula = new Matricula(Integer.valueOf(args[0]),
+                LocalDate.parse(args[1]),Integer.valueOf(args[2]),
+                Integer.valueOf(args[3]),auto,propietario);
         this.matriculaServicio.crear(matricula);
         return matricula;                                                    
     }
+    public Matricula buscarMatricula(String arg){
+        return this.matriculaServicio.buscarPorCodigo(Integer.valueOf(arg));
+    }
+    
+    public Matricula eliminar(String arg)
+    {
+        return this.matriculaServicio.eliminar(Integer.valueOf(arg));
+    }
+    
+    public Matricula modificar(String [] args){
+        Auto auto = this.autoServicio.buscarPorPlaca(args[4]);
+        Propietario propietario= this.propietarioServicio.buscarPorId(Integer.valueOf(args[5]));
+        Matricula matriculaNuevo = new Matricula(Integer.valueOf(args[0]),
+                LocalDate.parse(args[1]),Integer.valueOf(args[2]),Integer.valueOf(args[3]),
+                auto,propietario);
+        this.matriculaServicio.modificar(Integer.valueOf(args[0]), matriculaNuevo);
+        return matriculaNuevo;
+    }
+    
     
     public List<Matricula> listar()
     {

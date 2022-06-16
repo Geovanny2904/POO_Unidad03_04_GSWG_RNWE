@@ -22,15 +22,46 @@ public class MatriculaServicio implements IMatriculaServicio {
         return this.matriculaList;
     }
     @Override
-    public Matricula buscarPorNumero(int numero) {
-        var matricula = new Matricula(numero,"Ningún Resultado");
-        for(Matricula mat:this.matriculaList){
-            if(mat.getNumero()==numero){
-                matricula=mat;
+    public Matricula modificar(int codigoMatricula,Matricula matriculaNuevo) {
+        var posicion=this.buscarPosicion(this.buscarPorCodigo(codigoMatricula));
+        this.listar().get(posicion).setFechaMatricula(matriculaNuevo.getFechaMatricula());
+        this.listar().get(posicion).setNumeroChasis(matriculaNuevo.getNumeroChasis());
+        this.listar().get(posicion).setDuracionMatricula(matriculaNuevo.getDuracionMatricula());
+        this.listar().get(posicion).setAuto(matriculaNuevo.getAuto());
+        this.listar().get(posicion).setPropietario(matriculaNuevo.getPropietario());
+        return matriculaNuevo;
+    }
+
+    @Override
+    public Matricula eliminar(int codigoMatricula) {
+        Matricula matricula=this.buscarPorCodigo(codigoMatricula);
+        var posicion=this.buscarPosicion(matricula);
+        this.listar().remove(posicion);
+        return matricula;
+    }
+
+    @Override
+    public Matricula buscarPorCodigo(int codigoMatricula) {
+        Matricula matricula=null;
+        for(var m:this.matriculaList){
+            if(codigoMatricula==m.getNumero()){
+                matricula=m;
                 break;
             }
         }
         return matricula;
+    }
+
+    @Override
+    public int buscarPosicion(Matricula matricula) {
+        int posicion=-1;
+        for(var m:this.matriculaList){
+            posicion++;
+            if(m.getNumero()==matricula.getNumero()){
+                break;
+            }
+        }
+        return posicion;
     }
 
 }

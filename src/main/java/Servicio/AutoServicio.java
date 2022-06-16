@@ -21,11 +21,45 @@ public class AutoServicio implements IAutoServicio {
         return this.autoList;
     }
     @Override
-    public Auto buscarporPlaca(String placa){
-        for (var auto:this.autoList) {
-            if(auto.getPlaca().equals(placa))
-                return auto; 
+    public Auto buscarPorPlaca(String placaAuto) {
+        Auto auto=null;
+        for(var a:this.autoList){
+            if(placaAuto==a.getPlaca()){
+                auto=a;
+                break;
+            }
         }
-        throw new RuntimeException("No encontrado");
+        return auto;
     }
+    
+    @Override
+    public Auto modificar(String placaAuto, Auto autoNuevo) {
+        var posicion=this.buscarPosicion(this.buscarPorPlaca(placaAuto));
+        this.listar().get(posicion).setMarca(autoNuevo.getMarca());
+        this.listar().get(posicion).setPrecio(autoNuevo.getPrecio());
+        this.listar().get(posicion).setKilometraje(autoNuevo.getKilometraje());
+        this.listar().get(posicion).setModelo(autoNuevo.getModelo());
+        return autoNuevo;
+    }
+
+    @Override
+    public Auto eliminar(String placaAuto) {
+        Auto auto=this.buscarPorPlaca(placaAuto);
+        var posicion=this.buscarPosicion(auto);
+        this.listar().remove(posicion);
+        return auto;
+    }
+
+    @Override
+    public int buscarPosicion(Auto auto) {
+        int posicion=-1;
+        for(var a:this.autoList){
+            posicion++;
+            if(a.getPlaca()==auto.getPlaca()){
+                break;
+            }
+        }
+        return posicion;
+    }
+    
 }

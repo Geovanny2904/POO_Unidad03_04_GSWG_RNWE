@@ -15,10 +15,6 @@ public class Auto {
     int kilometraje;
     String modelo;
 
-    public Auto(Integer valueOf, String param) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public Auto(String placa, String marca, int precio, int kilometraje, String modelo) {
         this.placa = placa;
         this.marca = marca;
@@ -80,9 +76,9 @@ public class Auto {
 
     @Override
     public String toString() {
-        return "Auto{" + "placa=" + placa + ", marca=" + marca + 
-                ", precio=" + precio + ", kilometraje=" + kilometraje + 
-                ", modelo=" + modelo + '}';
+        return "Auto{" + "placa=" + placa + ", marca=" + marca + ", precio=" 
+                + precio + ", kilometraje=" + kilometraje + ", modelo=" 
+                + modelo + '}';
     }
-    
+
 }

@@ -7,12 +7,11 @@ package Servicio;
 import java.util.List;
 import Modelo.Matricula;
 
-/**
- *
- * @author User
- */
 interface IMatriculaServicio {
     public Matricula crear(Matricula matricula);
     public List<Matricula> listar();
-    public Matricula buscarPorNumero(int numero);
+    public Matricula modificar(int codigoMatricula, Matricula MatriculaNuevo);
+    public Matricula eliminar(int codigoMatricula);
+    public Matricula buscarPorCodigo(int codigoMatricula);
+    public int buscarPosicion(Matricula matricula);
 }

@@ -22,7 +22,14 @@ public class PropietarioControl {
         this.propietarioServicio.crear(propietario);
         return propietario;                                                    
     }
+    public Propietario buscarPropietario(String arg){
+        return this.propietarioServicio.buscarPorId(Integer.valueOf(arg));
+    }
     
+    public Propietario eliminar(String arg)
+    {
+        return this.propietarioServicio.eliminar(Integer.valueOf(arg));
+    }
     public List<Propietario> listar()
     {
         return this.propietarioServicio.listar();
